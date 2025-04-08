@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<div class="container">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style>
+	body {
+		opacity: 1;
+		background: radial-gradient(circle, transparent 20%, var(--color-background) 20%, var(--color-background) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--color-background) 20%, var(--color-background) 80%, transparent 80%, transparent) 35px 35px, linear-gradient(var(--color-grey-4) 2.8px, transparent 2.8px) 0 -1.4px, linear-gradient(90deg, var(--color-grey-4) 2.8px, #000000 2.8px) -1.4px 0;
+		background-size: 35px 35px, 140px 140px, 35px 35px, 35px 35px;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+</style>

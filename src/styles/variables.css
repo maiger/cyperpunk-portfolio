@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap");
+
+:root {
+  /* NEUTRAL */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey-1: hsl(211, 68%, 94%);
+  --color-grey-2: hsl(219, 14%, 63%);
+  --color-grey-3: hsl(219, 12%, 42%);
+  --color-grey-4: hsl(224, 21%, 14%);
+  --color-black: hsl(0, 0%, 0%);
+
+  /* TEXT */
+  --text-heading-size-1: 5rem;
+  --text-heading-size-2: 2.4rem;
+  --text-heading-size-3: 1.8rem;
+  --text-para-size: 1.6rem;
+  --text-para-size-small: 1.2rem;
+  --text-serif-font: "Merriweather", serif;
+  --text-sans-serif-font: "Chakra Petch", sans-serif;
+  --text-weight-regular: 400;
+  --text-weight-semibold: 600;
+  --text-weight-bold: 700;
+
+  --text-color-light: #e0eaff;
+  --text-color-dark: #182032;
+}
+
+/* Semantic variables */
+:root {
+  /* PRIMARY */
+  --color-primary-1: #58fa01;
+  /* SECONDARY */
+  --color-secondary-1: #c50a0a;
+  /* ACCENT */
+  --color-accent-primary: #00bfff;
+  /* BACKGROUND-COLOR */
+  --color-background: var(--color-black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* PRIMARY */
+    --color-primary-1: #f500d8;
+    /* SECONDARY */
+    --color-secondary-1: #dfa804;
+  }
+}

@@ -1,0 +1,24 @@
+@import "./reset.css";
+@import "./variables.css";
+
+/* Base styles */
+body {
+  font-family: var(--text-sans-serif-font);
+  font-weight: var(--text-weight-regular);
+  font-size: var(--text-para-size);
+  color: var(--text-color-light);
+  background-color: var(--color-background);
+}
+
+h1,
+h2 {
+  font-family: "Chakra Petch";
+}
+
+h1 {
+  font-size: var(--text-heading-size-1);
+}
+
+h2 {
+  font-size: var(--text-heading-size-2);
+}
