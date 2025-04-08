@@ -8,9 +8,10 @@
 		<title>Portfolio</title>
 	</head>
 	<body>
-		<div class="container">
-			<slot />
-		</div>
+		<main class="container">
+			<slot name="hero" />
+			<slot name="projects"/>
+		</main>
 	</body>
 </html>
 
@@ -34,6 +35,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
 		height: 100%;
 
 		background: linear-gradient(to top, #000000, #000000, #33333377, #33333377);

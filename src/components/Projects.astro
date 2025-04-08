@@ -1,0 +1,77 @@
+<div id="projects">
+  <div class="header">
+    <h2>Projects</h2>
+    <p>Collection of professional and hobby projects. Understandably can not provide links or share code about
+      professional projects and images have been modified when necessary.
+    </p>
+  </div>
+  <div class="project-list">
+    <div class="project project-1">
+      <img class="project-image" src="https://placehold.co/600x600" alt="Lorem Ipsum">
+      <div class="project-body">
+        <h3 class="project-title">Project 1</h3>
+        <div class="project-description">Lorem ipsum dolor sit amet. adalkjs lkjasdlk d alkjsd</div>
+        <div class="project-link">Github</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #projects {
+    margin-top: 10rem;
+    max-width: 80rem;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    margin: 5rem 1rem 1rem 1rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: var(--color-primary-1);
+      clip-path: polygon(0 16px,16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px,2px  calc(16px + 0.41px),2px calc(100% - 2px),calc(100% - 16px - 0.4px) calc(100% - 2px),calc(100% - 2px) calc(100% - 16px - 0.4px),calc(100% - 2px) 2px,calc(16px + 0.4px) 2px,2px calc(16px + 0.4px));
+    }
+  
+
+    .project-body {
+      width: 66%;
+      margin-left: 2rem;
+    }
+
+    .project-image {
+      height: 30rem;
+      background-color: var(--color-accent-primary);
+      clip-path: polygon(0 8px,8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+    }
+
+    .project-link {
+      padding: 1rem;
+      width: 15rem;
+      margin-top: 1rem;
+      font-size: var(--text-heading-size-3);
+      font-weight: var(--text-weight-bold);
+      background-color: var(--color-primary-1);
+      color: var(--color-black);
+      clip-path: polygon(0 8px,8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+      cursor: pointer;
+      transition: background-color 0.1s;
+
+      &:hover {
+        background-color: var(--color-accent-primary);
+      }
+    }
+
+  }
+
+
+</style>
