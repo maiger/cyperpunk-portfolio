@@ -1,14 +1,105 @@
 <div id="hero">
-  <h1>Lorem Ipsum</h1>
-  <p>Lorem ipsum dolor sit amet</p>
+  <div class="top-graphic">
+    <div class="color-block"><p class="runes">ᛗᚨᚾᛚᚨ</p></div>
+  </div>
+  <div class="text">
+    <h1><span id="firstname">Matti</span><span id="lastname">Meikäläinen</span></h1>
+  </div>
+  <div class="bottom-graphic">
+    <div class="color-block"><p class="flavor-text">: : : MEDIA REBOOT V117.MK.42.19 : : :</p></div>
+  </div>
 </div>
 
 <style>
+
+
+
 #hero {
-  /* background-color: var(--color-accent-primary); */
-  border: var(--color-accent-primary) 1px solid;
-  width: 50rem;
+  position: relative;
   margin: 3rem;
   padding: 1rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: var(--color-primary-1);
+    clip-path: polygon(0 16px,16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px,2px  calc(16px + 0.41px),2px calc(100% - 2px),calc(100% - 16px - 0.4px) calc(100% - 2px),calc(100% - 2px) calc(100% - 16px - 0.4px),calc(100% - 2px) 2px,calc(16px + 0.4px) 2px,2px calc(16px + 0.4px));}
+}
+
+.top-graphic {
+  .color-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--color-primary-1);
+    width: 100%;
+    height: var(--text-heading-size-2);
+    clip-path: polygon(0 8px,8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%, 63% 100%, 60% 80%, 40% 80%, 37% 100%,0 100%);
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      background: var(--color-black);
+    }
+
+    &:before {
+      right: 8rem;
+      height: 100%;
+      width: 9px;
+    }
+
+    &:after {
+      right: 9.5rem;
+      height: 100%;
+      width: 3px;
+    }
+
+    .runes {
+      font-family: var(--text-runic);
+      font-size: var(--text-heading-size-2);
+      color: var(--color-black);
+      margin-right: 1rem;
+    }
+  }
+}
+
+.text {
+  text-transform: uppercase;
+
+  #firstname {
+    color: var(--color-accent-primary);
+  }
+
+  #lastname {
+    margin-left: 1rem;
+    color: var(--color-transparent-50);
+  }
+}
+
+.bottom-graphic {
+  .color-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--color-primary-1);
+    width: 100%;
+    height: var(--text-para-size);
+    clip-path: polygon(0 50%, 25% 50%, 30% 0, 100% 0, 100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      background: var(--color-black);
+    }
+
+    .flavor-text {
+      font-size: var(--text-para-size-small);
+      color: var(--color-transparent-black-50);
+      margin-right: 1rem;
+    }
 }
 </style>

@@ -6,13 +6,13 @@ body {
   font-family: var(--text-sans-serif-font);
   font-weight: var(--text-weight-regular);
   font-size: var(--text-para-size);
-  color: var(--text-color-light);
+  color: var(--color-primary-1);
   background-color: var(--color-background);
 }
 
 h1,
 h2 {
-  font-family: "Chakra Petch";
+  font-family: var(--text-sans-serif-font);
 }
 
 h1 {
