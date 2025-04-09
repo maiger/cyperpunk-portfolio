@@ -1,0 +1,128 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="skills">
+  <div class="header">
+    <div class="header-title-container">
+      <span class="graphic-block-before"></span>
+      <h2 class="header-title">Skills</h2>
+      <span class="graphic-block-after"></span>
+    </div>
+  </div>
+  <div class="skills-container">
+    <div class="skill"><Icon name="teenyicons:pie-chart-outline"/><p>DataViz</p></div>
+    <div class="skill"><Icon name="teenyicons:javascript-outline"/><p>JavaScript</p></div>
+    <div class="skill"><Icon name="simple-icons:leaflet"/><p>Leaflet</p></div>
+    <div class="skill"><Icon name="teenyicons:typescript-outline"/><p>TypeScript</p></div>
+    <div class="skill"><Icon name="simple-icons:qgis"/><p>QGIS</p></div>
+    <div class="skill"><Icon name="teenyicons:code-outline"/><p>Frontend</p></div>
+    <div class="skill"><Icon name="teenyicons:vue-outline"/><p>Vue</p></div>
+    <div class="skill"><Icon name="teenyicons:python-outline"/><p>Python</p></div>
+    <div class="skill"><Icon name="teenyicons:git-outline"/><p>Git</p></div>
+    <div class="skill"><Icon name="teenyicons:360-outline"/><p>Unity</p></div>
+    <div class="skill"><Icon name="simple-icons:unity"/><p>C#</p></div>
+  </div>
+</div>
+
+<style>
+  .skills {
+    margin: 5rem 0 0 0;
+    width: 80rem;
+    max-width: 80rem;
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap: 2rem;
+  }
+
+  .skill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem 2rem;
+    min-width: 14rem;
+    width: 14rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: var(--color-primary-1);
+      clip-path: var(--cut-corners-border);
+    }
+
+    [data-icon] {
+      margin-right: 1rem;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      .graphic-block-before, .graphic-block-after {
+        position: relative;
+        background-color: var(--color-primary-1);
+        width: 100%;
+        height: 0.5rem;
+        clip-path: var(--cut-corners);
+      }
+
+      .graphic-block-before, .graphic-block-after {
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          background-color: var(--color-background);
+        }
+      }
+
+      .graphic-block-before {
+        &:before {
+          top: 0;
+          right: 2rem;
+          width: 0.5rem;
+          height: 100%;
+        }
+
+        &:after {
+          top: 0;
+          right: 5rem;
+          width: 50%;
+          height: 25%;
+        }
+      }
+
+      .graphic-block-after {
+        &:before {
+          top: 0;
+          left: 2rem;
+          width: 2rem;
+          height: 50%;
+        }
+
+        &:after {
+          bottom: 0;
+          left: 5rem;
+          width: 35%;
+          height: 25%;
+        }
+      }
+
+      .header-title {
+        margin: 0 1rem;
+      }
+    }
+  }
+</style>
