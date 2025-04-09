@@ -8,13 +8,16 @@
 		<title>Portfolio</title>
 	</head>
 	<body>
-		<main class="container">
+		<div class="body-content">
 			<slot name="header" />
-			<slot name="hero" />
-			<slot name="profile" />
-			<slot name="skills" />
-			<slot name="projects"/>
-		</main>
+			<main class="container">
+				<slot name="hero" />
+				<slot name="profile" />
+				<slot name="skills" />
+				<slot name="projects"/>
+			</main>
+			<slot name="footer" />
+		</div>
 	</body>
 </html>
 
@@ -30,6 +33,16 @@
 		background-size: 35px 35px, 140px 140px, 35px 35px, 35px 35px;
 	}
 
+	.body-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: linear-gradient(to top, #000000, #000000, #33333377, #33333377);
+		/* background-size: cover; */
+		background-size: 100% 3px;
+	}
+
 	.container {
 		display: flex;
 		align-items: center;
@@ -37,9 +50,5 @@
 		flex-direction: column;
 		height: 100%;
 		padding: 0 3rem;
-
-		background: linear-gradient(to top, #000000, #000000, #33333377, #33333377);
-		/* background-size: cover; */
-		background-size: 100% 3px;
 	}
 </style>

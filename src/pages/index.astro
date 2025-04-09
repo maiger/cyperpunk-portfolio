@@ -1,11 +1,12 @@
 ---
 import "../styles/main.css"
+import Portfolio from '../layouts/Portfolio.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Profile from '../components/Profile.astro';
 import Skills from '../components/Skills.astro';
 import Projects from '../components/Projects.astro';
-import Portfolio from '../layouts/Portfolio.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Portfolio id="portfolio">
@@ -14,4 +15,5 @@ import Portfolio from '../layouts/Portfolio.astro';
 	<Profile slot="profile"/>
 	<Skills slot="skills"/>
 	<Projects slot="projects" />
+	<Footer slot="footer" />
 </Portfolio>

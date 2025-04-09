@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import headerImage from "../assets/images/header.png"
+---
+
+<div class="footer">
+  <Image class="footer-graphic-block" src={headerImage} alt="Footer graphic block" height="16" width="1920" />
+  <div class="footer-content"></div>
+</div>
+
+<style>
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.footer-graphic-block {
+  transform: scaleY(-1) translateY(-5px);
+}
+
+.footer-content {
+  height: 10rem;
+  width: 100%;
+  background-color: var(--color-primary-1);
+}
+</style>
