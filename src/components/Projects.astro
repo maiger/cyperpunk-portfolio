@@ -1,7 +1,11 @@
 <div id="projects">
   <div class="header">
-    <h2>Projects</h2>
-    <p>Collection of professional and hobby projects. Understandably can not provide links or share code about
+    <div class="header-title-container">
+      <span class="graphic-block-before"></span>
+      <h2 class="header-title">Projects</h2>
+      <span class="graphic-block-after"></span>
+    </div>
+    <p class="header-description">Collection of professional and hobby projects. Understandably can not provide links or share code about
       professional projects and images have been modified when necessary.
     </p>
   </div>
@@ -26,6 +30,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .header-title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      .graphic-block-before, .graphic-block-after {
+        position: relative;
+        background-color: var(--color-primary-1);
+        width: 100%;
+        height: 0.5rem;
+        clip-path: var(--cut-corners);
+      }
+
+      .graphic-block-before, .graphic-block-after {
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          background-color: var(--color-background);
+        }
+      }
+
+      .graphic-block-before {
+        &:before {
+          top: 0;
+          right: 2rem;
+          width: 0.5rem;
+          height: 100%;
+        }
+
+        &:after {
+          top: 0;
+          right: 5rem;
+          width: 50%;
+          height: 25%;
+        }
+      }
+
+      .graphic-block-after {
+        &:before {
+          top: 0;
+          left: 2rem;
+          width: 2rem;
+          height: 50%;
+        }
+
+        &:after {
+          bottom: 0;
+          left: 5rem;
+          width: 35%;
+          height: 25%;
+        }
+      }
+
+      .header-title {
+        margin: 0 1rem;
+      }
+    }
   }
 
   .project {
