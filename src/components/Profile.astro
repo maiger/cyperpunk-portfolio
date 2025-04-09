@@ -1,43 +1,24 @@
----
-import Project from '../components/Project.astro';
----
-
-<div id="projects">
+<div class="profile">
   <div class="header">
     <div class="header-title-container">
       <span class="graphic-block-before"></span>
-      <h2 class="header-title">Projects</h2>
+      <h2 class="header-title">Profile</h2>
       <span class="graphic-block-after"></span>
     </div>
-    <p class="header-description">Collection of professional and hobby projects. Understandably can not provide links or share code about
-      professional projects and images have been modified when necessary.
+    <p class="header-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis ligula non lectus hendrerit maximus eget facilisis lacus.
+      Proin ornare urna id elit malesuada luctus. Pellentesque mattis sodales turpis in egestas. Vivamus suscipit in dui condimentum suscipit.
+      Integer cursus porta ex, sed volutpat urna cursus et.
     </p>
-  </div>
-  <div class="project-list">
-    <Project 
-      title='Project 1'
-      description='Lorem ipsum'
-      image='https://placehold.co/600x600'
-      alt='Lorem ipsum'
-      link='google.com'>
-    </Project>
-      <Project 
-      title='Project 2'
-      description='Lorem ipsum'
-      image='https://placehold.co/600x600'
-      alt='Lorem ipsum'>
-    </Project>
   </div>
 </div>
 
 <style>
-  #projects {
-    margin-top: 2rem;
-    margin-bottom: 10rem;
-    max-width: 80rem;
+  .profile {
+    margin: 5rem 0 0 0;
     width: 80rem;
-    height: 100%;
+    max-width: 80rem;
   }
+
   .header {
     display: flex;
     flex-direction: column;
@@ -69,32 +50,32 @@ import Project from '../components/Project.astro';
       .graphic-block-before {
         &:before {
           top: 0;
-          right: 7%;
-          width: 0.5rem;
-          height: 100%;
-        }
-
-        &:after {
-          top: 0;
-          right: 15%;
-          width: 50%;
-          height: 25%;
-        }
-      }
-
-      .graphic-block-after {
-        &:before {
-          top: 0;
-          left: 7%;
-          width: 7%;
+          right: 10%;
+          width: 20%;
           height: 50%;
         }
 
         &:after {
           bottom: 0;
-          left: 30%;
-          width: 35%;
-          height: 25%;
+          left: 0;
+          width: 50%;
+          height: 50%;
+        }
+      }
+
+      .graphic-block-after {
+        &:before {
+          bottom: 0;
+          right: 10%;
+          width: 10%;
+          height: 50%;
+        }
+
+        &:after {
+          top: 0;
+          left: 35%;
+          width: 50%;
+          height: 50%;
         }
       }
 
@@ -103,8 +84,4 @@ import Project from '../components/Project.astro';
       }
     }
   }
-
-  
-
-
 </style>
