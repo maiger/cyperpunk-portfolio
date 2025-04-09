@@ -11,9 +11,17 @@
 		<div class="body-content">
 			<slot name="header" />
 			<main class="container">
-				<slot name="hero" />
-				<slot name="profile" />
-				<slot name="skills" />
+				<div class="panel">
+					<div class="hero-wrapper">
+						<slot name="hero" />
+					</div>
+					<div class="profile-wrapper">
+						<slot name="profile" />
+					</div>
+					<div class="skills-wrapper">
+						<slot name="skills" />
+					</div>
+				</div>
 				<slot name="projects"/>
 			</main>
 			<slot name="footer" />
@@ -48,7 +56,33 @@
 		align-items: center;
 		justify-content: start;
 		flex-direction: column;
+		max-width: 80rem;
 		height: 100%;
 		padding: 0 3rem;
+	}
+
+	.hero-wrapper {
+		grid-area: header;
+	}
+
+	.profile-wrapper {
+		grid-area: profile;
+	}
+
+	.skills-wrapper {
+		grid-area: skills;
+	}
+
+	.panel {
+		display: grid;
+		grid-template-areas: 
+		"header header profile"
+		"skills skills profile"
+		"skills skills profile";
+		gap: 1rem;
+		justify-items: center;
+		align-items: center;
+		margin: 5rem 0 3rem 0;
+		max-width: 80rem;
 	}
 </style>
