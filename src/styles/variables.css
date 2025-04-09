@@ -28,6 +28,35 @@
 
   --text-color-light: #e0eaff;
   --text-color-dark: #182032;
+
+  /* CLIP PATHS */
+  /* Panel with top left / bottom right cut corner */
+  --cut-corners: polygon(
+    0 8px,
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
+
+  /* Border with cut corners in tl/br */
+  --cut-corners-border: polygon(
+    0 16px,
+    16px 0,
+    100% 0,
+    100% calc(100% - 16px),
+    calc(100% - 16px) 100%,
+    0 100%,
+    0 16px,
+    2px calc(16px + 0.41px),
+    2px calc(100% - 2px),
+    calc(100% - 16px - 0.4px) calc(100% - 2px),
+    calc(100% - 2px) calc(100% - 16px - 0.4px),
+    calc(100% - 2px) 2px,
+    calc(16px + 0.4px) 2px,
+    2px calc(16px + 0.4px)
+  );
 }
 
 /* Semantic variables */
