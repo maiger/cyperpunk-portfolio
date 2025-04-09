@@ -1,0 +1,86 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image: string;
+	alt: string;
+  link?: string;
+}
+
+const {title, description, image, alt,  link} = Astro.props;
+---
+
+<div class="project">
+  <img class="image" src={image} alt={alt}>
+  <div class="body">
+    <h3 class="title">{title}</h3>
+    <div class="description">{description}</div>
+    <!-- Only render link if link given -->
+    {(link) &&
+      <a href=`https://www.${link}` class="link">Github</a>
+    }
+  </div>
+</div>
+
+<style>
+  .project {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    margin: 5rem 1rem 1rem 1rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: var(--color-primary-1);
+      clip-path: var(--cut-corners-border);
+    }
+
+    .image {
+      height: 30rem;
+      background-color: var(--color-accent-primary);
+      clip-path: var(--cut-corners);
+    }
+
+    .body {
+      position: relative;
+      width: 66%;
+      margin-left: 2rem;
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        background-color: var(--color-primary-1);
+        height: 100%;
+        width: 2rem;
+        clip-path: var(--cut-corners);
+      }
+    }
+
+    .title {
+      margin-bottom: 1rem;
+    }
+
+    .link {
+      position: absolute;
+      bottom: 0;
+      padding: 1rem;
+      width: 15rem;
+      margin-top: 1rem;
+      font-size: var(--text-heading-size-3);
+      font-weight: var(--text-weight-bold);
+      background-color: var(--color-primary-1);
+      color: var(--color-black);
+      clip-path: var(--cut-corners);
+      cursor: pointer;
+      transition: background-color 0.1s;
+
+      &:hover {
+        background-color: var(--color-accent-primary);
+      }
+    }
+
+  }
+</style>
