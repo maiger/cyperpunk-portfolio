@@ -14,6 +14,7 @@ import profileImage from '../assets/images/profile-roman-raizen-unsplash-glitch.
     max-width: 20rem;
     height: 30rem;
     margin-left: 1rem;
+    transform: translateY(7px);
 
     &:before {
       content: "";
@@ -51,5 +52,12 @@ import profileImage from '../assets/images/profile-roman-raizen-unsplash-glitch.
       background: var(--color-primary-1);
       clip-path: var(--cut-corners)
     }
+  }
+
+  @media only screen and (max-width: 520px) {
+    .profile {
+      width: 20rem;
+      height: 12rem;
+      margin: 0;
   }
 </style>
