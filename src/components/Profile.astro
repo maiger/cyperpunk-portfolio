@@ -2,39 +2,55 @@
 import { Image } from 'astro:assets';
 import profileImage from '../assets/images/profile-roman-raizen-unsplash-glitch.jpg';
 ---
-<div class="profile">
-  <Image class="image" src={profileImage} alt="Profile image" />
-  <span class="flavor-text">/// FEATURES.PROFILE</span>
-  <span class="graphic-block"></span>
+<div class="profile-wrap">
+  <div class="profile">
+    <Image class="image" src={profileImage} alt="Profile image" />
+    <span class="flavor-text">/// FEATURES.PROFILE</span>
+    <span class="graphic-block"></span>
+  </div>
 </div>
 
 <style>
+  .profile-wrap {
+    transition: all 0.2s;
+    &:hover {
+      filter: var(--drop-shadow);
+    }
+  }
+
   .profile {
     position: relative;
     max-width: 20rem;
     height: 30rem;
     margin-left: 1rem;
     transform: translateY(7px);
+    clip-path: var(--cut-corners-lg);
 
     &:before {
       content: "";
       position: absolute;
-      inset: -7px -3px;
+      inset: 0px;
       background: var(--color-primary-1);
-      clip-path: var(--cut-corners-border)
+      clip-path: var(--cut-corners-border);
+      z-index: 100;
     }
 
     .image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      clip-path: var(--cut-corners)
+      clip-path: var(--cut-corners-lg);
+      transition: transform 1s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     .flavor-text {
       position: absolute;
-      bottom: 0;
-      left: -7px;
+      bottom: 6px;
+      left: -4px;
       margin: 0 1rem;
       padding: 0 1rem;
       background: var(--color-primary-1);
@@ -45,9 +61,9 @@ import profileImage from '../assets/images/profile-roman-raizen-unsplash-glitch.
 
     .graphic-block {
       position: absolute;
-      top: 0;
-      left: 7px;
-      right: 0px;
+      top: 6px;
+      left: 12px;
+      right: 4px;
       height: 0.5rem;
       background: var(--color-primary-1);
       clip-path: var(--cut-corners)

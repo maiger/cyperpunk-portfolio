@@ -40,6 +40,15 @@
     0 100%
   );
 
+  --cut-corners-lg: polygon(
+    0 16px,
+    16px 0,
+    100% 0,
+    100% calc(100% - 16px),
+    calc(100% - 16px) 100%,
+    0 100%
+  );
+
   /* Border with cut corners in tl/br */
   --cut-corners-border: polygon(
     0 16px,
@@ -57,6 +66,8 @@
     calc(16px + 0.4px) 2px,
     2px calc(16px + 0.4px)
   );
+
+  --drop-shadow: drop-shadow(4px 4px 0px var(--color-accent-primary));
 }
 
 /* Semantic variables */

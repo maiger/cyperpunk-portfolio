@@ -11,17 +11,18 @@ import { Icon } from 'astro-icon/components'
     </div>
   </div>
   <div class="skills-container">
-    <div class="skill"><Icon name="teenyicons:pie-chart-outline"/><p>DataViz</p></div>
-    <div class="skill"><Icon name="teenyicons:javascript-outline"/><p>JavaScript</p></div>
-    <div class="skill"><Icon name="simple-icons:leaflet"/><p>Leaflet</p></div>
-    <div class="skill"><Icon name="simple-icons:qgis"/><p>QGIS</p></div>
-    <div class="skill"><Icon name="teenyicons:code-outline"/><p>FrontEnd</p></div>
-    <div class="skill"><Icon name="teenyicons:vue-outline"/><p>Vue</p></div>
-    <div class="skill"><Icon name="teenyicons:typescript-outline"/><p>TypeScript</p></div>
-    <div class="skill"><Icon name="teenyicons:python-outline"/><p>Python</p></div>
-    <div class="skill"><Icon name="teenyicons:git-outline"/><p>Git</p></div>
-    <div class="skill"><Icon name="teenyicons:360-outline"/><p>Unity</p></div>
-    <div class="skill"><Icon name="simple-icons:unity"/><p>C#</p></div>
+    <!-- Skill wrap to get drop shadows with clip path -->
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:pie-chart-outline"/><p>DataViz</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:javascript-outline"/><p>JavaScript</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="simple-icons:leaflet"/><p>Leaflet</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="simple-icons:qgis"/><p>QGIS</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:code-outline"/><p>FrontEnd</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:vue-outline"/><p>Vue</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:typescript-outline"/><p>TypeScript</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:python-outline"/><p>Python</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:git-outline"/><p>Git</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="teenyicons:360-outline"/><p>Unity</p></div></div>
+    <div class="skill-wrap"><div class="skill"><Icon name="simple-icons:unity"/><p>C#</p></div></div>
   </div>
 </div>
 
@@ -37,6 +38,15 @@ import { Icon } from 'astro-icon/components'
     gap: 1rem;
   }
 
+  .skill-wrap {
+    /* filter: drop-shadow(0px 0px 0px var(--color-accent-primary)); */
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      filter: var(--drop-shadow);
+    }
+  }
+
   .skill {
     position: relative;
     display: flex;
@@ -45,11 +55,18 @@ import { Icon } from 'astro-icon/components'
     padding: 0.5rem 1rem;
     min-width: 12rem;
     width: 12rem;
+    clip-path: var(--cut-corners-lg);
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: var(--color-primary-1);
+      color: var(--color-background);
+    }
 
     &:before {
       content: "";
       position: absolute;
-      inset: -2px;
+      inset: 0px;
       background: var(--color-primary-1);
       clip-path: var(--cut-corners-border);
     }
