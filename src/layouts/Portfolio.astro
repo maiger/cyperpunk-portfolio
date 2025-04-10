@@ -39,6 +39,7 @@
 								linear-gradient(var(--color-grey-3) 2.8px, transparent 2.8px) 0 -1.4px,
 								linear-gradient(90deg, var(--color-grey-3) 2.8px, #000000 2.8px) -1.4px 0;
 		background-size: 35px 35px, 140px 140px, 35px 35px, 35px 35px;
+		overflow-x: hidden;
 	}
 
 	.body-content {
@@ -85,4 +86,23 @@
 		margin: 5rem 0 3rem 0;
 		max-width: 80rem;
 	}
+
+	@media only screen and (max-width: 1000px) {
+    .panel {
+			grid-template-areas: 
+			"header header header"
+			"skills skills profile"
+			"skills skills profile";
+    }
+
+		.hero-wrapper {
+			margin-bottom: 2rem;
+		}
+  }
+
+	@media only screen and (max-width: 700px) {
+		.container {
+			padding: 0 0;
+		}
+  }
 </style>
