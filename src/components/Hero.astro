@@ -5,8 +5,8 @@
     </div>
   </div>
   <h1 class="signature">
-    <p id="firstname">Markus</p>
-    <p id="lastname">Kohonen</p>
+    <p id="firstname" title="Markus">Markus</p>
+    <p id="lastname" title="Kohonen">Kohonen</p>
   </h1>
   <div class="bottom-graphic">
     <div class="color-block"><p class="flavor-text">: : : MEDIA REBOOT V117.MK.42.19 : : :</p></div>
@@ -78,6 +78,29 @@
     margin-left: 1rem;
     color: var(--color-transparent-50);
   }
+
+  #firstname, #lastname {
+    animation: glitch 2s linear infinite;
+
+    &:before,
+    &:after{
+      content: attr(title);
+      position: absolute;
+      left: 0;
+    }
+
+    &:before{
+      animation: glitchTop 2s linear infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    &:after{
+      animation: glitchBottom 3s linear infinite;
+      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+  }
 }
 
 .bottom-graphic {
@@ -105,6 +128,53 @@
   }
 }
 
+/* ANIMATIONS */
+@keyframes glitch{
+  1%,32%{
+    transform: translate(0.5px,0) skew(0deg);
+  }
+  2%,30%{
+    transform: translate(-0.5px,0) skew(0deg);
+  }
+  31%{
+    transform: translate(0,0) skew(3deg); 
+  }
+  33%,100%{
+    transform: translate(0,0) skew(0deg); 
+  }
+}
+
+@keyframes glitchTop{
+  1%,32%{
+    transform: translate(1px,-1px);
+  }
+  2%,30%{
+    transform: translate(-1px,1px);
+  }
+  31%{
+    transform: translate(4px,-1px) skew(-4deg); 
+  }
+  33%,100%{
+    transform: translate(0,0) skew(0deg);
+  }
+}
+
+@keyframes glitchBottom{
+  1%,32%{
+    transform: translate(-1px,0);
+  }
+  2%,30%{
+    transform: translate(-1px,0);
+  }
+  31%{
+    transform: translate(-6px,2px) skew(6deg); 
+  }
+  33%,100%{
+    transform: translate(0,0) skew(0deg); 
+  }
+}
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 520px) {
     .signature {
       flex-direction: column;
