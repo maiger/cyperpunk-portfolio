@@ -24,7 +24,7 @@
 				</div>
 				<slot name="projects"/>
 			</main>
-			<slot name="footer" />
+			<slot class="footer" name="footer" />
 		</div>
 	</body>
 </html>
@@ -57,7 +57,7 @@
 		justify-content: start;
 		flex-direction: column;
 		max-width: 80rem;
-		height: 100%;
+		min-height: 100vh;
 		padding: 0 3rem;
 	}
 
@@ -112,6 +112,7 @@
 			"header"
 			"skills"
 			"profile";
+			gap: 2rem;
     }
   }
 </style>
