@@ -8,15 +8,23 @@ interface Props {
 	alt: string;
   link?: string;
   linkText?: string;
+  tags?: Array<string>
 }
 
-const {title, description, image, alt,  link, linkText} = Astro.props;
+const {title, description, image, alt,  link, linkText, tags} = Astro.props;
 ---
 
 <div class="project">
   <img class="image" src={image} alt={alt}>
   <div class="body">
     <h3 class="title">{title}</h3>
+    {(tags) &&
+    <div class="tags">
+      {
+        tags.map((tag) => <div class="tag">{tag}</div>)
+      }
+    </div>
+    }
     <div class="description">{description}</div>
     <!-- Only render link if link given -->
     {(link) &&
@@ -69,6 +77,20 @@ const {title, description, image, alt,  link, linkText} = Astro.props;
       margin-bottom: 1rem;
       margin-right: 3rem;
     }
+
+    .tags {
+      display: flex;
+
+      .tag {
+        background-color: var(--color-primary-1);
+        clip-path: var(--cut-corners);
+        color: var(--color-background);
+        padding: 0.5rem 1rem;
+        margin: 0 1rem 1rem 0;
+        font-size: var(--text-para-size-small);
+      }
+    }
+
     .description {
       margin-right: 3rem;
       margin-bottom: 1rem;
