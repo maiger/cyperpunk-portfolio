@@ -147,4 +147,16 @@ import { Icon } from 'astro-icon/components'
     grid-template-columns:repeat(2, 1fr);
     }
   }
+
+  @media only screen and (max-width: 520px) {
+    .skills-container {
+      grid-template-columns:repeat(3, 1fr);
+    }
+  }
+
+  @media only screen and (max-width: 440px) {
+    .skills-container {
+      grid-template-columns:repeat(2, 1fr);
+    }
+  }
 </style>
