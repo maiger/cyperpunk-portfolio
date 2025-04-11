@@ -1,13 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
 	title: string;
 	description: string;
 	image: string;
 	alt: string;
   link?: string;
+  linkText?: string;
 }
 
-const {title, description, image, alt,  link} = Astro.props;
+const {title, description, image, alt,  link, linkText} = Astro.props;
 ---
 
 <div class="project">
@@ -17,7 +20,7 @@ const {title, description, image, alt,  link} = Astro.props;
     <div class="description">{description}</div>
     <!-- Only render link if link given -->
     {(link) &&
-      <a href=`https://www.${link}` class="link">Github</a>
+      <a href=`https://www.${link}` class="link">{linkText}</a>
     }
   </div>
 </div>
@@ -64,6 +67,7 @@ const {title, description, image, alt,  link} = Astro.props;
 
     .title {
       margin-bottom: 1rem;
+      margin-right: 3rem;
     }
     .description {
       margin-right: 3rem;
