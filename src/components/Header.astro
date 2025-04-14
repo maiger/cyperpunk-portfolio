@@ -9,6 +9,20 @@ import headerImage from "../assets/images/header.png"
 
 <style>
 .header {
+  position: relative;
   opacity: 0.9;
+  width: 100%;
+  height: 1rem;
+  background-color: var(--color-primary-1);
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 0.25rem;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--color-accent-primary);
+    z-index: 1;
+  }
 }
 </style>

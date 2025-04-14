@@ -5,7 +5,7 @@ import headerImage from "../assets/images/header.png"
 
 <div class="footer">
   <!-- <Image class="footer-graphic-block" src={headerImage} alt="Footer graphic block" height="16" width="1920" /> -->
-  <div class="footer-content"></div>
+  <div class="footer-content"><a class="link" href="http://github.com/maiger">: : : GITHUB : : :</a> </div>
 </div>
 
 <style>
@@ -16,6 +16,15 @@ import headerImage from "../assets/images/header.png"
   opacity: 0.9;
   width: 100%;
   margin-top: auto;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 0.25rem;
+    width: 100%;
+    background-color: var(--color-accent-primary);
+    z-index: 1;
+  }
 }
 
 .footer-graphic-block {
@@ -23,8 +32,20 @@ import headerImage from "../assets/images/header.png"
 }
 
 .footer-content {
-  height: 8rem;
   width: 100%;
   background-color: var(--color-primary-1);
+  display: flex;
+  justify-content: center;
+
+  .link {
+    margin: 2rem;
+    font-size: var(--text-para-size-small);
+    color: var(--color-transparent-black-50);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-accent-primary);
+    }
+  }
 }
 </style>
