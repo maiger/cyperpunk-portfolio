@@ -8,15 +8,16 @@ interface Props {
 	alt: string;
   link?: string;
   linkText?: string;
-  tags?: Array<string>
+  tags?: Array<string>;
+  flavorText?: string;
 }
 
-const {title, description, image, alt,  link, linkText, tags} = Astro.props;
+const {title, description, image, alt,  link, linkText, tags, flavorText} = Astro.props;
 ---
 
 <div class="project">
   <img class="image" src={image} alt={alt}>
-  <div class="body">
+  <div class="body" data-flavor-text={flavorText}>
     <h3 class="title">{title}</h3>
     {(tags) &&
     <div class="tags">
@@ -63,12 +64,20 @@ const {title, description, image, alt,  link, linkText, tags} = Astro.props;
       margin-left: 2rem;
 
       &:before {
-        content: "";
+        content: attr(data-flavor-text);
         position: absolute;
         right: 0;
         background-color: var(--color-primary-1);
         height: 100%;
         width: 2rem;
+        /* padding-top: 1rem; */
+        padding-right: 0.2rem;
+        font-size: var(--text-para-size-small);
+        color: var(--color-transparent-black-50);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        /* letter-spacing: 1px; */
+        text-align: center;
         clip-path: var(--cut-corners);
       }
     }
@@ -82,12 +91,19 @@ const {title, description, image, alt,  link, linkText, tags} = Astro.props;
       display: flex;
 
       .tag {
-        background-color: var(--color-primary-1);
-        clip-path: var(--cut-corners);
-        color: var(--color-background);
-        padding: 0.5rem 1rem;
-        margin: 0 1rem 1rem 0;
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        margin: 0 0.5rem 1rem 0;
         font-size: var(--text-para-size-small);
+        color: var(--color-primary-1);
+
+        &:before {
+          content: "";
+          position: absolute;
+          inset: 0px;
+          background: var(--color-primary-1);
+          clip-path: var(--cut-corners-border);
+        }
       }
     }
 
